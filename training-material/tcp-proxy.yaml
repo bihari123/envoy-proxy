@@ -1,3 +1,7 @@
+# envoy as L4 proxy ( tcp router )
+# just remember, tcp proxy by default doesn't do load balancing. It is sticky in nature which means that your browser will keep hitting the same host over and over again.
+# in order to make it do load balancing, you need to run the envoy as a single threaded app( not the best idea, but that's what i know as of now)  by the following command
+#  $ envoy -c config.yaml --concurrency 1
 static_resources:
   listeners:
   - address:
@@ -11,7 +15,7 @@ static_resources:
           "@type": type.googleapis.com/envoy.extensions.filters.network.tcp_proxy.v3.TcpProxy 
           stat_prefix: tcp_proxy
           cluster: allbackend_cluster
-  
+          # we don't do route matching bcoz we don't havce access to the content in tcp 
   clusters:
   - name: allbackend_cluster
     connect_timeout: 1s
