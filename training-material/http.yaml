@@ -39,20 +39,20 @@ static_resources:
             - endpoint:
                 address:
                   socket_address:
-                    address: tarun
+                    address: 127.0.0.1
                     port_value: 1111
             - endpoint:
                 address:
                   socket_address:
-                    address: tarun
+                    address: 127.0.0.1
                     port_value: 2222
             - endpoint:
                 address:
                   socket_address:
-                    address: tarun
+                    address: 127.0.0.1
                     port_value: 3333
             - endpoint:
                 address:
                   socket_address:
-                    address: tarun
+                    address: 127.0.0.1
                     port_value: 4444
