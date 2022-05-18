@@ -9,5 +9,11 @@ func main() {
 		c.String(200, "Welcom to app 3!")
 	})
 
+	r.GET("/app2", func(c *gin.Context) {
+		c.String(200, "split routed to app 3!")
+	})
+
+
+
 	r.Run(":3333")
 }
